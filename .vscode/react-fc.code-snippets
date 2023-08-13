@@ -1,0 +1,54 @@
+{
+  "React FC with props": {
+    "prefix": "rfcp",
+    "body": [
+      "import React from 'react';",
+      "import classNames from 'classnames';",
+      "import styles from './styles.module.scss';",
+      "",
+      "interface I${1:Component}Props {",
+      "  className?: string;",
+      "}",
+      "",
+      "export const ${1:Component}: React.FC<I${1:Component}Props> = (props) => {",
+      "  const { className } = props;",
+      "",
+      "  return (",
+      "    <div className={classNames(styles.container, className)}>",
+      "      <div />",
+      "    </div>",
+      "  );",
+      "};",
+      ""
+    ],
+    "description": "React FC with props"
+  },
+  "React FC without props": {
+    "prefix": "rfc",
+    "body": [
+      "import React from 'react';",
+      "",
+      "export const ${1:Component}: React.FC = () => {",
+      "  return <div>Not implemented yet.</div>;",
+      "};",
+      ""
+    ],
+    "description": "React FC without props"
+  },
+  "Base page": {
+    "prefix": "rfcpage",
+    "body": [
+      "import React from 'react';",
+      "import { BaseHeader } from '@widgets/Header';",
+      "import { NotesTree } from '@widgets/Notes';",
+      "import { BaseLayout, BaseSider } from '@shared/ui';",
+      "",
+      "export const Component: React.FC = () => {",
+      "  return <BaseLayout headerSlot={<BaseHeader />} siderSlot={<BaseSider children={<NotesTree />} />}>",
+      "",
+      "  </BaseLayout>;",
+      "};"
+    ],
+    "description": "React FC for Page with BaseLayout"
+  }
+}
